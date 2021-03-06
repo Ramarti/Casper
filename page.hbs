@@ -13,6 +13,11 @@ into the {body} of the default.hbs template --}}
 
 {{!-- Everything inside the #post tags pulls data from the post --}}
 {{#post}}
+  {{#has tag="#es"}}
+    {{#contentFor "lang"}}es{{/contentFor}}
+  {{else}}
+    {{#contentFor "lang"}}{{@site.lang}}{{/contentFor}}
+  {{/has}}
 
 <main id="site-main" class="site-main outer">
     <div class="inner">
